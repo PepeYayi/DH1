@@ -1,0 +1,42 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.dh.nicoexercise3fragments.Fragment3">
+
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:id="@+id/editTextEmailFrag3"
+        android:layout_gravity="center"
+        android:layout_marginBottom="40dp"
+        android:textSize="25dp"/>
+
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTextPasswordFrag3"
+        android:hint="Password"
+        android:textSize="25dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+
+        />
+
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="ENVIO"
+        android:id="@+id/botonEnvioFrag2"
+        android:textSize="17dp"
+        android:layout_marginTop="70dp"
+        />
+
+
+</FrameLayout>
