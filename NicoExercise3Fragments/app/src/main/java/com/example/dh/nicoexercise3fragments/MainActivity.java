@@ -7,7 +7,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity implements Fragment1.Notificador {
+public class MainActivity extends AppCompatActivity implements Fragment1.Notificador, Fragment2.Notificador2 {
 
 
 
@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity implements Fragment1.Notific
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.add(R.id.container1, fragment1);
-        //FALTAN ACA LOS COMMIT
+        fragmentTransaction.commit();
 
 
 
@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements Fragment1.Notific
         FragmentManager fragmentManager2 = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction2 = fragmentManager2.beginTransaction();
         fragmentTransaction2.replace(R.id.container1, fragment2);
+        fragmentTransaction2.commit();
 
     }
 
@@ -51,6 +52,21 @@ public class MainActivity extends AppCompatActivity implements Fragment1.Notific
         FragmentManager fragmentManager3 = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction3 = fragmentManager3.beginTransaction();
         fragmentTransaction3.replace(R.id.container1, fragment3);
+        fragmentTransaction3.commit();
+
+    }
+
+
+
+    @Override
+    public void clickCrear2(Bundle bundle) {
+
+        Intent intent = new Intent(MainActivity.this, Fragment4.class);
+
+
+
+        intent.putExtras(bundle);
+        startActivity(intent);
 
 
     }

@@ -1,6 +1,7 @@
 package com.example.dh.nicoexercise3fragments;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -14,10 +15,8 @@ import android.widget.TextView;
  */
 public class Fragment3 extends Fragment {
 
+  // private Notificador3 notificador3;
 
-    public Fragment3() {
-        // Required empty public constructor
-    }
 
 
     @Override
@@ -34,5 +33,18 @@ public class Fragment3 extends Fragment {
 
         return view;
     }
+
+      /*  @Override
+        public void onAttach(Context context) {
+        super.onAttach(context);
+        this.notificador3 = (Notificador3) context;
+        }
+
+        public interface Notificador3{
+
+
+        } */
+
+
 
 }

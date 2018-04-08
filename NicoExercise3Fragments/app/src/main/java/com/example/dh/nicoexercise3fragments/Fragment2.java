@@ -1,6 +1,7 @@
 package com.example.dh.nicoexercise3fragments;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -16,9 +17,7 @@ import android.widget.TextView;
 public class Fragment2 extends Fragment {
 
 
-    public Fragment2() {
-        // Required empty public constructor
-    }
+    private Notificador2 notificador2;
 
 
     @Override
@@ -26,15 +25,53 @@ public class Fragment2 extends Fragment {
                              Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_fragment2, container, false);
 
-        EditText email = view.findViewById(R.id.editTextEmail);
-        EditText password = view.findViewById(R.id.editTextPasswordFrag2);
-        EditText repetirPass = view.findViewById(R.id.editTextRepetirPasswordFrag2);
         Button botonCrear2 = view.findViewById(R.id.botonCrearFrag2);
+
+
+        botonCrear2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                EditText email = view.findViewById(R.id.editTextEmail);
+                EditText password = view.findViewById(R.id.editTextPasswordFrag2);
+                EditText repetirPass = view.findViewById(R.id.editTextRepetirPasswordFrag2);
+
+                String enviarEmail = email.getText().toString();
+                String enviarPassword = password.getText().toString();
+                String enviarRepetirPass = repetirPass.getText().toString();
+
+
+                Bundle bundle = new Bundle();
+                bundle.putString("email", enviarEmail);
+                bundle.putString("pass", enviarPassword);
+                bundle.putString("repetirPass", enviarRepetirPass);
+
+                notificador2.clickCrear2(bundle);
+            }
+        });
+
+
+
 
 
 
 
         return view;
     }
+
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        this.notificador2 = (Notificador2) context;
+    }
+
+
+
+    public interface Notificador2{
+        public void clickCrear2(Bundle bundle);
+
+    }
+
 
 }

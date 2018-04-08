@@ -26,10 +26,16 @@ public class Fragment4 extends Fragment {
                              Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_fragment4, container, false);
 
+        Bundle bundle = getArguments();
+
         TextView emailFrag4 = view.findViewById(R.id.emailFrag4);
         TextView passwordFrag4 = view.findViewById(R.id.passwordFrag4);
 
+        String msj1 = bundle.getString("email");
+        String msj2 = bundle.getString("pass");
 
+        emailFrag4.setText(msj1);
+        passwordFrag4.setText(msj2);
 
 
         return view;

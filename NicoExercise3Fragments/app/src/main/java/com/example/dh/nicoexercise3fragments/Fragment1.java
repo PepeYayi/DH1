@@ -1,6 +1,7 @@
 package com.example.dh.nicoexercise3fragments;
 
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -44,6 +45,11 @@ public class Fragment1 extends Fragment {
         return view;
     }
 
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        this.notificador = (Notificador) context;
+    }
 
     public interface Notificador{
        public void clickLogin();
