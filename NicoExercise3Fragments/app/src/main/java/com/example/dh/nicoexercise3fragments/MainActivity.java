@@ -59,10 +59,18 @@ public class MainActivity extends AppCompatActivity implements Fragment1.Notific
 
 
     @Override
-    public void clickCrear2(Bundle bundle) {
+    public void clickCrear2(String email, String pass, String passRepetida) {
 
         Intent intent = new Intent(MainActivity.this, Fragment4.class);
 
+        //.TRIM SACA LOS ESPACIOS
+
+
+
+        Bundle bundle = new Bundle();
+        bundle.putString("email", email);
+        bundle.putString("pass", pass);
+        bundle.putString("passR", passRepetida);
 
 
         intent.putExtras(bundle);

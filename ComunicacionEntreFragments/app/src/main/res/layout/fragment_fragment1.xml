@@ -12,6 +12,8 @@
         android:id="@+id/editTextFragment1"
         android:hint="Ingrese mensaje"/>
 
+
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

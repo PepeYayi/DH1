@@ -41,12 +41,9 @@ public class Fragment2 extends Fragment {
                 String enviarRepetirPass = repetirPass.getText().toString();
 
 
-                Bundle bundle = new Bundle();
-                bundle.putString("email", enviarEmail);
-                bundle.putString("pass", enviarPassword);
-                bundle.putString("repetirPass", enviarRepetirPass);
 
-                notificador2.clickCrear2(bundle);
+
+                notificador2.clickCrear2(enviarEmail, enviarPassword, enviarRepetirPass);
             }
         });
 
@@ -69,7 +66,7 @@ public class Fragment2 extends Fragment {
 
 
     public interface Notificador2{
-        public void clickCrear2(Bundle bundle);
+        public void clickCrear2(String email, String pass, String passRepetida);
 
     }
 
