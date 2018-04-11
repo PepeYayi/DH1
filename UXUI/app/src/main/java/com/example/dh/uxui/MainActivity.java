@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements Fragment1.Notificador {
@@ -30,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements Fragment1.Notific
 
     @Override
     public void clickEnMas(String mensaje, String regalos) {
-        if (mensaje.isEmpty()){
+        if (TextUtils.isEmpty(mensaje)){
 
             /* Snackbar.make(MainActivity.this, "Error en los datos", Snackbar.LENGTH_LONG)
                 .setAction("CLOSE", new View.OnClickListener() {
@@ -42,16 +43,19 @@ public class MainActivity extends AppCompatActivity implements Fragment1.Notific
             Toast.makeText(MainActivity.this, "Error en los datos", Toast.LENGTH_LONG);
 
     }       else {
-            Fragment2 fragment2 = new Fragment2();
-            FragmentManager fragmentManager = getSupportFragmentManager();
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.container1, fragment2);
+
+            Intent intent = new Intent(MainActivity.this, Main2Activity.class);
+
 
             Bundle bundle = new Bundle();
             bundle.putString("mensaje", mensaje);
             bundle.putString("regalos", regalos);
 
-            fragmentTransaction.commit();
+            intent.putExtras(bundle);
+
+            startActivity(intent);
+
+
 
         }
 }}
