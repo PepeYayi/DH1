@@ -1,0 +1,51 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.dh.recyclerfinalpedro.Fragment1">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="modelo"
+            android:textSize="20sp"
+            android:layout_weight="2"
+            android:id="@+id/editTextModelo"/>
+
+        <EditText
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="precio"
+            android:textSize="20sp"
+            android:layout_weight="2"
+            android:id="@+id/editTextPrecio"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="cargar"
+            android:id="@+id/botonCargar"
+            android:textSize="14sp"
+            android:layout_weight="2"/>
+
+
+    </LinearLayout>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/RecyclerViewPedro">
+
+    </android.support.v7.widget.RecyclerView>
+
+</LinearLayout>
