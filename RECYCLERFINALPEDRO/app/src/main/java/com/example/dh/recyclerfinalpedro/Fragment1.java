@@ -2,6 +2,7 @@ package com.example.dh.recyclerfinalpedro;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -19,7 +20,7 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Fragment1 extends Fragment {
+public class Fragment1 extends Fragment implements FragmentDetalle.Notificable3 {
 
 
 
@@ -96,6 +97,13 @@ public class Fragment1 extends Fragment {
     public void onAttach(Context context) {
         super.onAttach(context);
         this.notificable2 = (Notificable2) context;
+    }
+
+    @Override
+    public void eliminarCelda(Producto producto) {
+
+
+
     }
 
     public interface Notificable2{

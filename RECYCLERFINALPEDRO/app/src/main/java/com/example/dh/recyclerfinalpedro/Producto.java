@@ -2,11 +2,13 @@ package com.example.dh.recyclerfinalpedro;
 
 import android.widget.ImageView;
 
+import java.io.Serializable;
+
 /**
  * Created by DH on 16/4/2018.
  */
 
-public class Producto {
+public class Producto implements Serializable {
     private String modelo;
     private String precio;
     private int intImagen;

@@ -12,7 +12,7 @@ import android.support.v7.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements Fragment1.Notificable2{
+public class MainActivity extends AppCompatActivity implements Fragment1.Notificable2, FragmentDetalle.Notificable3{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +44,19 @@ public class MainActivity extends AppCompatActivity implements Fragment1.Notific
         intent.putExtras(bundle);
         startActivity(intent);
     }
+
+    @Override
+    public void eliminarCelda(Producto producto) {
+        Intent intent = getIntent();
+
+        Bundle bundle = intent.getExtras();
+
+        bundle.getSerializable("ObjectProduct");
+
+        //SALIO DESDE EL FRAGMENT DETALLE, PASO AL ACTIVITY 2, AL MAIN, Y AHORA COMO VA AL FRAGMENT1 PARA ELIMINARLO?
+
+    }
+
 
     //RECIBIR SERIALIZABLE Y ELIMINAR PRODUCTO
 }
