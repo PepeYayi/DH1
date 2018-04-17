@@ -15,13 +15,18 @@ import java.util.List;
 
 
 
-    // PARA EL DEL DETALLE, EL ADAPTER LE AVISA AL FRAGMENT, EL FRAGMENT LE AVISA A LA ACTIVITY Y LA ACTIVITY REEMPLAZA UN FRAGMENT POR OTRO
+    // PARA EL DEL DETALLE, EL ADAPTER LE AVISA AL FRAGMENT, EL FRAGMENT LE AVISA A LA ACTIVITY , LA ACT A LA ACT2 Y ESTA AL FRAGMENT DETALLE
 
 public class Adapter extends RecyclerView.Adapter{
 
 
     List<Producto> listaDeProductos;
+    private Notificable notificable;
 
+    public Adapter(List<Producto> listaDeProductos, Notificable notificable) {
+        this.listaDeProductos = listaDeProductos;
+        this.notificable = notificable;
+    }
 
     public Adapter(List<Producto> listaDeProductos) {
         this.listaDeProductos = listaDeProductos;
@@ -66,7 +71,12 @@ public class Adapter extends RecyclerView.Adapter{
             precio = (TextView) itemView.findViewById(R.id.precioDeProducto);
             imagen = (ImageView) itemView.findViewById(R.id.imagenProducto);
 
-
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    notificable.notificarClick(listaDeProductos.get(getAdapterPosition()));
+                }
+            });
         }
 
         public void cargarProducto(Producto producto){
@@ -80,6 +90,10 @@ public class Adapter extends RecyclerView.Adapter{
 
     }
 
+
+    public interface Notificable{
+        void notificarClick(Producto producto);
+    }
 
 
 }

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".FragmentDetalle">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:layout_weight="2"
+        android:textStyle="bold"
+        android:text="MODELO"
+        android:id="@+id/textViewDetalleModelo"/>
+
+    <TextView
+        android:textSize="30sp"
+        android:layout_width="wrap_content"
+        android:layout_weight="2"
+        android:layout_height="wrap_content"
+        android:text="PRECIO"
+        android:layout_marginBottom="8dp"
+        android:id="@+id/textViewDetallePrecio"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BORRAR"
+        android:id="@+id/botonBorrar" />
+    </LinearLayout>
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/desc1"
+        android:id="@+id/imageViewDetalleImagen"/>
+
+</LinearLayout>

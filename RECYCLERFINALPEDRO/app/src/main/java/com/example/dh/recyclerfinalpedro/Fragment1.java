@@ -1,6 +1,7 @@
 package com.example.dh.recyclerfinalpedro;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -21,9 +22,13 @@ import java.util.List;
 public class Fragment1 extends Fragment {
 
 
+
     private EditText modelo;
     private EditText precio;
     private Button botonCargar;
+
+    private Notificable2 notificable2;
+
 
     public Fragment1() {
         // Required empty public constructor
@@ -43,8 +48,7 @@ public class Fragment1 extends Fragment {
         precio = view.findViewById(R.id.editTextPrecio);
         botonCargar = view.findViewById(R.id.botonCargar);
 
-        final String modelo1 = modelo.getText().toString();
-        final String precio1 = precio.getText().toString();
+
 
         List<Producto> listaDeProductos = new ArrayList<>();
         listaDeProductos.add(new Producto("Lanchi1", "$4000",R.drawable.desc3));
@@ -62,7 +66,12 @@ public class Fragment1 extends Fragment {
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
 
-        final Adapter adapter = new Adapter(listaDeProductos);
+        final Adapter adapter = new Adapter(listaDeProductos, new Adapter.Notificable() {
+            @Override
+            public void notificarClick(Producto producto) {
+                notificable2.recibirProductoClickeado(producto);
+            }
+        });
 
         recyclerView.setAdapter(adapter);
 
@@ -81,6 +90,16 @@ public class Fragment1 extends Fragment {
 
         return view;
 
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        this.notificable2 = (Notificable2) context;
+    }
+
+    public interface Notificable2{
+        void recibirProductoClickeado(Producto producto);
     }
 
 }
