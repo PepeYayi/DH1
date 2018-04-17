@@ -53,6 +53,18 @@ public class MainActivity extends AppCompatActivity implements Fragment1.Notific
 
         bundle.getSerializable("ObjectProduct");
 
+        FragmentDetalle fragmentDetalle = new FragmentDetalle();
+
+        fragmentDetalle.setArguments(bundle);
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        fragmentTransaction.replace(R.id.RecyclerViewPedro,fragmentDetalle);
+
+        fragmentTransaction.commit();
+
         //SALIO DESDE EL FRAGMENT DETALLE, PASO AL ACTIVITY 2, AL MAIN, Y AHORA COMO VA AL FRAGMENT1 PARA ELIMINARLO?
 
     }
