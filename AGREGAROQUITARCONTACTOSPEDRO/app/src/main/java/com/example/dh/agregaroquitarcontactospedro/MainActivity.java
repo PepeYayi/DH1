@@ -44,6 +44,8 @@ public class MainActivity extends AppCompatActivity implements Fragment1.Notific
         fragmentTransaction.commit();
 
     }
+
+
 }
 
 //AL ADAPTER CREA UN NOTIFICABLE QUE LO IMPLEMENTA EL FRAGMENT Y DENTRO DE ESA IMPLEMENTACION EN EL METODO DICE QUE

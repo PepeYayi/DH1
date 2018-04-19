@@ -8,7 +8,7 @@ import android.os.Bundle;
 public class MainActivity extends AppCompatActivity implements Fragment1.Notificable2 {
 
 
-
+    Notificable3 notificable3;
 
 
     @Override
@@ -30,18 +30,11 @@ public class MainActivity extends AppCompatActivity implements Fragment1.Notific
 
     @Override
     public void abrirDetalleContactoClickeado2(Serie serie) {
-        FragmentDetalle fragmentDetalle = new FragmentDetalle();
-        Bundle bundle = new Bundle();
-        bundle.putSerializable(FragmentDetalle.CLAVE_SERIE_DETALLE,serie);
-        fragmentDetalle.setArguments(bundle);
+         notificable3.abrirDetalleContactoClickeado2(serie);
+    }
 
-
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
-        fragmentTransaction.add(R.id.containerMainActivityFragment2, fragmentDetalle);
-
-        fragmentTransaction.commit();
+    public interface Notificable3 {
+        public void abrirDetalleContactoClickeado2(Serie serie);
     }
 
 

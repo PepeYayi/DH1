@@ -51,8 +51,16 @@ public class Fragment1 extends Fragment implements AdapterSeries.Notificable {
 
         List<Serie> lista = new ArrayList<>();
 
-        lista.add(new Serie("LA CASA DE PAPEL", "slaaaam"));
-        lista.add(new Serie("VIKINGS", "saasdm"));
+        lista.add(new Serie("asdas", "slaaaam"));
+        lista.add(new Serie("VIadGS", "saasdm"));
+        lista.add(new Serie("ASDASD", "saaad"));
+        lista.add(new Serie("ADASD", "slaadim"));
+        lista.add(new Serie("asdas", "slaaaam"));
+        lista.add(new Serie("VIadGS", "saasdm"));
+        lista.add(new Serie("ASDASD", "saaad"));
+        lista.add(new Serie("ADASD", "slaadim"));
+        lista.add(new Serie("asdas", "slaaaam"));
+        lista.add(new Serie("VIadGS", "saasdm"));
         lista.add(new Serie("ASDASD", "saaad"));
         lista.add(new Serie("ADASD", "slaadim"));
 
