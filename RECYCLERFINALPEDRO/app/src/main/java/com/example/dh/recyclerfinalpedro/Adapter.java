@@ -17,13 +17,13 @@ import java.util.List;
 
     // PARA EL DEL DETALLE, EL ADAPTER LE AVISA AL FRAGMENT, EL FRAGMENT LE AVISA A LA ACTIVITY , LA ACT A LA ACT2 Y ESTA AL FRAGMENT DETALLE
 
-public class Adapter extends RecyclerView.Adapter{
+public class Adapter extends RecyclerView.Adapter implements FragmentDetalle.Notificable3{
 
 
     List<Producto> listaDeProductos;
     private Notificable notificable;
 
-    public Adapter(List<Producto> listaDeProductos, Notificable notificable) {
+    public Adapter(List<Producto> listaDeProductos, Notificable notificable)  {
         this.listaDeProductos = listaDeProductos;
         this.notificable = notificable;
     }
@@ -58,6 +58,13 @@ public class Adapter extends RecyclerView.Adapter{
         listaDeProductos.add(producto);
         notifyDataSetChanged();
     }
+
+    @Override
+    public void eliminarCelda(Producto producto) {
+        listaDeProductos.remove(producto);
+        notifyDataSetChanged();
+    }
+
     private class ProductViewHolder extends RecyclerView.ViewHolder{
 
         private TextView modelo;
@@ -84,6 +91,8 @@ public class Adapter extends RecyclerView.Adapter{
             precio.setText(producto.getPrecio());
             imagen.setImageResource(producto.getIntImagen());
         }
+
+
 
 
 
