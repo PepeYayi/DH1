@@ -90,6 +90,11 @@ public class Adapter extends RecyclerView.Adapter{
 
     }
 
+    public void eliminarProducto(Producto producto){
+        listaDeProductos.remove(producto);
+        notifyDataSetChanged();
+    }
+
 
     public interface Notificable{
         void notificarClick(Producto producto);

@@ -27,7 +27,7 @@ public class Fragment1 extends Fragment implements FragmentDetalle.Notificable3 
     private EditText modelo;
     private EditText precio;
     private Button botonCargar;
-
+    Adapter adapter;
     private Notificable2 notificable2;
 
 
@@ -67,7 +67,7 @@ public class Fragment1 extends Fragment implements FragmentDetalle.Notificable3 
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
 
-        final Adapter adapter = new Adapter(listaDeProductos, new Adapter.Notificable() {
+        adapter = new Adapter(listaDeProductos, new Adapter.Notificable() {
             @Override
             public void notificarClick(Producto producto) {
                 notificable2.recibirProductoClickeado(producto);

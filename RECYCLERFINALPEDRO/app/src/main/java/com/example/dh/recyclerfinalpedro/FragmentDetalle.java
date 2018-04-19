@@ -1,6 +1,7 @@
 package com.example.dh.recyclerfinalpedro;
 
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -67,6 +68,12 @@ public class FragmentDetalle extends Fragment {
 
     }
 
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        notificable3 = (Notificable3) getActivity();
+    }
 
     public interface Notificable3{
         void eliminarCelda(Producto producto);

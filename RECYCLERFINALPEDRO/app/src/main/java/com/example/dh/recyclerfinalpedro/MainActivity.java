@@ -12,14 +12,19 @@ import android.support.v7.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements Fragment1.Notificable2, FragmentDetalle.Notificable3{
+public class MainActivity extends AppCompatActivity implements Fragment1.Notificable2{
+
+    Fragment1 fragment1 = new Fragment1();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         setContentView(R.layout.activity_main);
 
-        Fragment1 fragment1 = new Fragment1();
+        fragment1 = new Fragment1();
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -27,7 +32,11 @@ public class MainActivity extends AppCompatActivity implements Fragment1.Notific
         fragmentTransaction.add(R.id.FragmentContainer, fragment1);
         fragmentTransaction.commit();
 
+        try {
+            eliminarCelda();
+        }catch (Exception e){
 
+        }
 
 
     }
@@ -45,27 +54,14 @@ public class MainActivity extends AppCompatActivity implements Fragment1.Notific
         startActivity(intent);
     }
 
-    @Override
-    public void eliminarCelda(Producto producto) {
+    public void eliminarCelda() {
         Intent intent = getIntent();
 
         Bundle bundle = intent.getExtras();
 
-        bundle.getSerializable("ObjectProduct");
+        Producto productoAEliminar = (Producto) bundle.getSerializable("ObjectProduct");
 
-        FragmentDetalle fragmentDetalle = new FragmentDetalle();
-
-        fragmentDetalle.setArguments(bundle);
-
-        FragmentManager fragmentManager = getSupportFragmentManager();
-
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
-        fragmentTransaction.replace(R.id.RecyclerViewPedro,fragmentDetalle);
-
-        fragmentTransaction.commit();
-
-        //SALIO DESDE EL FRAGMENT DETALLE, PASO AL ACTIVITY 2, AL MAIN, Y AHORA COMO VA AL FRAGMENT1 PARA ELIMINARLO?
+        fragment1.eliminarCelda(productoAEliminar);
 
     }
 

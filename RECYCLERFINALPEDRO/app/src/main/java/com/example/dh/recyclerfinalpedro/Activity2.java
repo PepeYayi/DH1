@@ -1,7 +1,8 @@
 package com.example.dh.recyclerfinalpedro;
 
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AppCompatActivity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -21,11 +22,11 @@ public class Activity2 extends AppCompatActivity implements FragmentDetalle.Noti
         FragmentDetalle fragmentDetalle = new FragmentDetalle();
         fragmentDetalle.setArguments(bundle);
 
-        FragmentManager fragmentManager = getFragmentManager();
+        FragmentManager fragmentManager = getSupportFragmentManager();
 
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-        // fragmentTransaction.add(R.id.FragmentContainer2, fragmentDetalle); ROMPE!!!!!!!
+        fragmentTransaction.add(R.id.FragmentContainer2, fragmentDetalle);
 
         fragmentTransaction.commit();
 
