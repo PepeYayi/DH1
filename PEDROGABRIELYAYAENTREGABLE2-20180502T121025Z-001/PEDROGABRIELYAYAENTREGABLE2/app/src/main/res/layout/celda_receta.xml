@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="150dp"
+
+    >
+
+    <ImageView
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="160dp"
+        android:layout_height="100dp"
+        android:src="@drawable/granolaconfruta"
+        android:id="@+id/imagenReceta"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TITULO"
+            android:textSize="20dp"
+            android:id="@+id/tituloReceta"
+            android:textStyle="bold"
+            android:textColor="@color/Negro"
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:id="@+id/descripcionReceta"
+            android:text="Descripcion de ejemplo para ver como se acomodan los elementos en la celda y el maslenght"
+            android:textSize="16dp"
+            android:textColor="@color/Negro"
+            android:layout_marginLeft="10dp"/>
+
+
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

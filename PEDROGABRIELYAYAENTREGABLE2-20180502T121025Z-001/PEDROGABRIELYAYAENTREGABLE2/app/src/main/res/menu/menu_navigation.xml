@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/recetas_navigation"
+        android:title="Recetas">
+
+    </item>
+
+    <item
+        android:id="@+id/about_navigation"
+        android:title="About">
+
+    </item>
+
+
+</menu>
