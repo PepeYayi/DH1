@@ -1,0 +1,24 @@
+{
+  "products": [
+    {
+      "nombre": "PS4",
+      "descripcion": "La ultima PlayStation, diversion asegurada",
+      "precio": "12000.0"
+    },
+    {
+      "nombre": "PS3",
+      "descripcion": "La ante-ultima PlayStation, diversion casi-asegurada",
+      "precio": "12000.0"
+    },
+    {
+      "nombre": "PS2",
+      "descripcion": "La segunda PlayStation, diversion notan-asegurada",
+      "precio": "12000.0"
+    },
+    {
+      "nombre": "PS1",
+      "descripcion": "La primer Play, diversion solo para entendidos",
+      "precio": "12000.0"
+    }
+  ]
+}
